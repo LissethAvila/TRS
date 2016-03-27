@@ -1,0 +1,154 @@
+body
+{
+
+}
+
+header{
+	background-color: #0174DF;
+}
+
+.imglogo{
+	width: 40%;
+
+}
+.textH{
+	font-size: 35px;
+	color: #FFFFFF;
+	padding-top: 5px;
+	padding-bottom: -40px;
+	vertical-align:bottom;
+}
+p{
+	color: #FE9A2E;
+}
+h5{
+	font-size: 14px;
+	text-align: right;
+	float: left;
+	color: #FFFFFF;
+	line-height: -5%;
+}
+h6{
+	color: #FE9A2E;
+
+}
+
+h5 > a{
+	color: #FFFFFF;
+	text-decoration: none;
+
+}
+a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:hover, a:active{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.adaptar{
+	width: 100%;
+}
+
+.margin{
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.top{
+	max-width: 100%; 
+	height: auto;
+	background: url("../Imags/listonweb.png");
+	background-repeat: no-repeat;
+	font-family: Tahoma, Verdana, "Trebuchet MS";
+	font-size: 13px;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+	}
+}
+.topnew{
+	background-color: #0000FF;
+	color: #FFFFFF;
+	border-bottom-right-radius: 3em;
+}
+
+.color5{
+	background-color: #0174DF;
+}
+.color6{
+	color: #FFFFFF;
+		border-color: white;
+}
+
+
+.color7{
+	background-color: #D8D8D8;
+	text-align: center;
+}
+
+.pie {
+	width: 100%;
+	background-color: #D8D8D8;
+	text-align: center;
+	position: absolute;
+	bottom: 0 !important;
+	bottom: -1px;
+	height: 50px;
+}
+
+/* Inicio de Sesion*/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.imgrenta{
+	width: 60%;
+	vertical-align: center;
+}
+.tdrenta{
+	text-align: center;
+	vertical-align: center;
+}
+
+.color9{
+	color: #FFBF00;
+}
+.color10{
+	background-color: #8A0829;
+}
+
+.color11{
+	background-color: #D8D8D8;
+}
