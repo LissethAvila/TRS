@@ -26,23 +26,23 @@ class ClassSesion
 	Public function sesionUsuario($email, $pass){
 		
 		
-		$sqlConsulta ="Select idUsuario, email, contrasena, Nickname, TipoUsuario_idTusuario As Tusuario From usuario where Email = '".$email."'";
+		$sqlConsulta ="Select IdUsuario, Nombre_Usuario, Correo, Contrasena, Tipo_Usuario_IdTUsuario As Tusuario From usuario where Correo = '".$email."'";
 	
 		$DatosUs = mysqli_query($this->conn, $sqlConsulta) or die(mysqli_error());
 		
 		$sesionUs = mysqli_fetch_array($DatosUs);
 		
-		if($pass == $sesionUs["contrasena"]){
+		if($pass == $sesionUs["Contrasena"]){
 
-				//-----Ingresa usuario Cliente
+				//-----Ingresa usuario Administrador
 				if ($sesionUs["Tusuario"] == 1) {
 					
-					$_SESSION["usuario"] = $sesionUs["Nickname"];
+					$_SESSION["usuario"] = $sesionUs["Nombre_Usuario"];
 					$_SESSION["Tusuario"] = $sesionUs["Tusuario"];
-					$_SESSION["Idusuario"] = $sesionUs["idUsuario"];
+					$_SESSION["Idusuario"] = $sesionUs["IdUsuario"];
 		
-					header('location: ../Vista/vhome..php');
-					echo "<meta http-equiv=refresh content=0;URL=../Vista/vhome..php />";
+					header('location: ../index.html');
+					echo "<meta http-equiv=refresh content=0;URL=../index.html />";
 				}
 
 				//-----Ingresa usuario Empleado
@@ -73,7 +73,7 @@ class ClassSesion
 					
 			}else{
 			
-				echo "<script>location.href='../Vista/vIsesion.php?mensaje=".$this->mensajeError."';</script>";
+				echo "<script>location.href='../Vista/vInSesion.php?mensaje=".$this->mensajeError."';</script>";
 				
 			}
 

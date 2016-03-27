@@ -65,7 +65,7 @@
 	<!-- Se muestra cuadro de inicio de sesion-->
 	<div class="container">
 
-      <form method="POST" action="../Controlador/conURegistro.php" name="ISesion" class="form-signin" role="form">
+      <form method="POST" action="../Controlador/conUsuario.php" name="ISesion" class="form-signin" role="form">
         <h2 align="center"class="form-signin-heading">Iniciar Sesión</h2>
         <input name="email_sesion" id="email_sesion" type="email" class="form-control" placeholder="Email " required="requeried" autofocus>
         <br>
@@ -73,7 +73,7 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
 
-        <h4 align="Center"><a href="vURegistro.php">¿Olvidó su contraseña?</a></h4>
+        <h4 align="Center"><a href="#">¿Olvidó su contraseña?</a></h4>
       
       			<?php 
             		if(isset($_GET["mensaje"]))
