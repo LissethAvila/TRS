@@ -15,7 +15,7 @@ class ClassUsuario
 	var $mensajeExitoso;
 	Var $mensajeError;
 	var $conn;
-	var $depto;
+	
 
 	Public function ClassUsuario(){
 		$this->conexion = new mConexion();
@@ -28,43 +28,28 @@ class ClassUsuario
 
 	
 	//Insertar Usuario
-	Public function registroUsuario($nit, $nombre, $apellido, $direccion, $zona, $departamento, $municipio, 
-									$telefono, $fechanac, $email, $nickname, $pass, $genero){
+	Public function registroUsuario($area, $puesto, $ubic, $tusuario, $apellidoP, $apellidoS, $nombre, $email, $pass){
 		
 		
-		$sql ="insert into usuario (NIT, Nombre, Apellido, FechaNac, Email, Telefono, Nickname, Contrasena, TipoUsuario_idTusuario, Genero_idGenero)  
-											values ('".$nit."','". $nombre."','".$apellido."','".$fechanac."',
-											'".$email."','".$telefono."','".$nickname."','".$pass."','1','".$genero."')";
-	
+		$sql ="insert into usuario (Area_IdArea, Puesto_IdPuesto, Ubicacion_IdUbicacion, Tipo_Usuario_IdTUsuario, Apellido_Primero, Apellido_Segundo, Nombre_Usuario, Correo, Contrasena)  
+											values ('".$area."','". $puesto."','".$ubic."','".$tusuario."',
+											'".$apellidoP."','".$apellidoS."','".$nombre."','".$email."','".$pass."')";
+		echo "sql: ".$sql;
+		$insetado= mysqli_query($this->conn,$sql) or die(mysqli_error());
+		//$enlace = $this->conn;
+		
+		if($insetado){
 
-		$enlace = $this->conn;
-		
-		if(mysqli_query($enlace, $sql)){
+			header('location: ../index.html');
 
 					
-			}else{
+			}
 			
-				echo "<script>location.href='../Vista/vURegistro.php?mensaje=".$this->mensajeError."';</script>";
+				echo "<script>location.href='../Vista/vCrearUsua.php?mensaje=".$this->mensajeError."';</script>";
 				
 			}
 
-		$sqlConsulta = "Select idUsuario From usuario order by idUsuario desc limit 1";
-		$resultUs = mysqli_query($this->conn,$sqlConsulta);
-		$idUs = mysqli_fetch_array($resultUs);
-
-		$sqldirec = "insert into direccion (Nomenclatura, Zona, Usuario_idUsuario, Municipio_idMunicipio)  
-											values ('".$direccion."','". $zona."','".$idUs['idUsuario']."','".$municipio."')";
-
-		if(mysqli_query($enlace, $sqldirec)){
-
-				echo "<script>location.href='../Vista/Ok.html';</script>";				
-			}else{
-			
-				echo "<script>location.href='../Vista/vURegistro.php?mensaje=".$this->mensajeError."';</script>";
-				
-			}
-
-	}
+	
 
 	//--------------Modifica Usuario Cliente---------
 

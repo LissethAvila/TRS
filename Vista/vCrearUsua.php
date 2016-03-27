@@ -1,11 +1,11 @@
 
 <?php 
-	//require ("../Modelo/mAdmonUsuario.php");
-	//require ("../Modelo/mConsola.php");
-	//require ("../Modelo/mCategoria.php");
-	//$objAUsuario = new ClassUsuario();
-	//$objCategoria = new ClassCategoria();
-	//$objConsola = new ClassConsola();
+	require ("../Modelo/mAdmonUsuario.php");
+	require ("../Modelo/mSesion.php");
+
+	$objAUsuario = new ClassUsuario();
+	$objSesion = new ClassSesion();
+
 
  ?>
 <!DOCTYPE html>
@@ -35,17 +35,17 @@
 <body>
 	<!--Logo y Sesion  -->
 	
-	<header class="container-fluid">
+	<!--<header class="container-fluid">
 		<div class="row">
 			<div class="col-xl-6 col-sm-6 col-md-6 col-lg-6">
-				<!--<h1 class="textH">GAMERENT</h1>-->
+				<!--<h1 class="textH">GAMERENT</h1>
 				<img class="imglogo" src="../Imags/logo.png" class="img-responsive" alt="">
 				
 			<div class="col-xl-6 col-sm-6 col-md-6 col-lg-6">
 							
 			</div>
 		</div>
-	</header>
+	</header>-->
 	
 	<!-- Menu -->
 	<nav class="navbar navbar-default" role="navigation">
@@ -78,45 +78,63 @@
 		</div>
 
 
-    <form action="../Controlador/conURegistro.php" method="POST" name="FRegistro" id="FRegistro" class="" role="form">
+    <form action="../Controlador/conUsuario.php" method="POST" name="FRegistro" id="FRegistro" class="" role="form">
 
 			<div class="row">
 				<div class="form-group col-xs-12 col-sm-12 col-md-3">
 					<label for="">Tipo de Usuario</label>
-					<select name="TipoUsuar" id="TipoUsua" class="form-control" values="Seleccione TipoUsuario">
+					<select name="tipousua" id="tipousua" class="form-control" values="Seleccione TipoUsuario">
 						<option value="Seleccion_TipoUsuario">Seleccione</option>
 						<option value="1">Administrador</option>
 						<option value="2">Agente</option>
-						<option value="2">Colaborador</option>
+						<option value="3">Colaborador</option>
 
 					</select>
 				</div>
 				<div class="form-group col-xs-12 col-sm-12 col-md-3">
-					<label for="">Agencia / Area</label>
-					<select name="AgeArea" id="AgeArea" class="form-control" values="Seleccione AgenciaArea">
-						<option value="Seleccion_AgenciaArea">Seleccione</option>
-						<option value="1">Sistemas</option>
-						<option value="2">Contabilidad</option>
-						<option value="2">Personas</option>
+					<label for="">Ubicacion</label>
+					<select name="ubica" id="ubica" class="form-control" values="Seleccione Ubicacion">
+						<option value="Seleccion_Ubicacion">Seleccione</option>
+						<option value="1">CEAS</option>
 						<option value="2">Agencia Quetzaltenango</option>
+						<option value="3">Agencia Huehuetenango</option>
 
 					</select>
 				</div>
-				<!--<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
-					<label name="lnit" id="lnit">NIT</label>
-					<input name="nit" id="nit" class="form-control" type="text" placeholder="XXXXXXX-X" value="" requiered="requiered">
-				</div> -->
-				
 			</div>
+			<div class="row">
+				<div class="form-group col-xs-12 col-sm-12 col-md-3">
+					<label for="">Area</label>
+					<select name="area" id="area" class="form-control" values="Seleccione Area">
+						<option value="Seleccion_Area">Seleccione</option>
+						<option value="1">Sistemas</option>
+						<option value="2">Contabilidad</option>
+						<option value="3">Personas</option>
+						<option value="4">Ventas</option>
+
+					</select>
+				</div>
+				<div class="form-group col-xs-12 col-sm-12 col-md-3">
+					<label for="">Puesto</label>
+					<select name="puesto" id="puesto" class="form-control" values="Seleccione Puesto">
+						<option value="Seleccion_Puesto">Seleccione</option>
+						<option value="1">Administradora</option>
+						<option value="2">Analista</option>
+						<option value="3">Jefe de Agencia</option>
+
+					</select>
+				</div>
+				
+				</div>
 
 			<div class="row">
 				<div class="form-group col-xs-12 col-sm-4 col-md-3 col-lg-3">
-					<label name="" id="">Apellido Paterno</label>
-					<input name="apellidopa" id="apellidopa" class="form-control" type="text" placeholder="Apellido Paterno" value="" requiered="requiered">
+					<label name="" id="">Primer Apellido</label>
+					<input name="apellidop" id="apellidop" class="form-control" type="text" placeholder="Primer Apellido" value="" requiered="requiered">
 				</div>
 				<div class="form-group col-xs-12 col-sm-4 col-md-3 col-lg-3">
-					<label name="" id="">Apellido Materno</label>
-					<input name="apellidoma" id="apellidoma" class="form-control" type="text" placeholder="Apellido Materno" value="" requiered="requiered">
+					<label name="" id="">Segundo Apellido</label>
+					<input name="apellidos" id="apellidos" class="form-control" type="text" placeholder="Segundo Apellido" value="" requiered="requiered">
 				</div>				
 			</div>
 			<div class="row">
@@ -128,19 +146,11 @@
 				
 			</div>
 
-			<div class="row">
+			
+				<div class="row">
 				
-				<div class="form-group col-xs-12 col-sm-12 col-md-3">
-					<label for="">Puesto</label>
-					<select name="puesto" id="puesto" class="form-control" values="Seleccione Puesto">
-						<option value="Seleccion_Puesto">Seleccione</option>
-						<option value="1">Administradora</option>
-						<option value="2">Analista</option>
-						<option value="2">Jefe de Agencia</option>
-
-					</select>
-				</div>
-				<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3">
+				
+				<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<label name="" id="">Email</label>
 					<input name="email" id="email" class="form-control" type="email" placeholder="ejemplo@compartamos.com.gt" value="" requiered="requiered">
 				</div>
@@ -167,7 +177,7 @@
 			<div align="center" class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
 			<div id="botones" class="row-fluid">
 				<button type="submit" class="btn btn-primary" value="registrar">Registrar</button>
-				<button type="buttom"class="btn btn-danger"><a href="vhome..php">Cancelar</a></button>
+				<button type="buttom"class="btn btn-danger"><a href="../index.html">Cancelar</a></button>
 				<?php 
             		if(isset($_GET["mensaje"]))
             		{
