@@ -1,16 +1,29 @@
 body
 {
-
+	/*background-color: #Ffff99;*/
+	background-color: #FAFAFA;
 }
 
 header{
-	background-color: #0174DF;
+	background-color: #FAFAFA;
+	/*background-color: #FFFF99;*/
 }
 
 .imglogo{
-	width: 40%;
+	width: 25%;
 
 }
+
+.imglogo2{
+	width: 10%;
+
+}
+
+.imguser{
+	size: 5%;
+
+}
+
 .textH{
 	font-size: 35px;
 	color: #FFFFFF;
@@ -31,6 +44,16 @@ h5{
 h6{
 	color: #FE9A2E;
 
+}
+
+h4 > a{
+	color: #FF4000;
+	text-decoration: none;
+}
+
+h4 > a:hover, a:active{
+	color: #0040FF;
+	text-decoration: none;
 }
 
 h5 > a{
@@ -59,7 +82,7 @@ a:hover, a:active{
 .top{
 	max-width: 100%; 
 	height: auto;
-	background: url("../Imags/listonweb.png");
+	background: url("../img/trs.png");
 	background-repeat: no-repeat;
 	font-family: Tahoma, Verdana, "Trebuchet MS";
 	font-size: 13px;

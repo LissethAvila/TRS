@@ -131,11 +131,11 @@ a, button {
 }
 
 .nav li:nth-child(6n+5) {
-	background: rgb(27, 54, 71);
+	background: rgb(0, 0, 102);
 }
 
 .nav li:nth-child(6n+6) {
-	background: rgb(21, 40, 54);
+	background: rgb(0, 106, 75);
 }
 
 /* For screen bigger than 800px */

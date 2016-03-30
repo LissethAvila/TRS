@@ -19,22 +19,16 @@
 	<!--Logo y Sesion  -->
 	
 	<header class="container-fluid">
-		<div class="row">
-			<div class="col-xl-6 col-sm-6 col-md-6 col-lg-6">
-				<!--<h1 class="textH">GAMERENT</h1>-->
-				<img class="imglogo" src="../Imags/logo.png" class="img-responsive" alt="">
-			</div>
+		<div class="row" align="left">
+		<img class="imglogo" src="../img/trs.png" class="img-responsive" alt="">
 				
-			<div class="col-xl-6 col-sm-6 col-md-6 col-lg-6">
-							
-			</div>
 		</div>
 	</header>
 	
-	<!-- Menu -->
+	<!-- Menu 
 	<nav class="navbar navbar-default" role="navigation">
   <!-- El logotipo y el icono que despliega el menú se agrupan
-       para mostrarlos mejor en los dispositivos móviles -->
+       para mostrarlos mejor en los dispositivos móviles 
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse"
 	            data-target=".navbar-ex1-collapse">
@@ -47,20 +41,20 @@
 	  </div>
 	 
 	  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
-	       otro elemento que se pueda ocultar al minimizar la barra -->
+	       otro elemento que se pueda ocultar al minimizar la barra 
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	   <!-- <ul class="nav navbar-nav">
 	      <li class="active"><a href="vhome..php">Inicio</a></li>
 	     
 	      <li><a href="vContacto.html">Contacto</a></li>
-	    </ul> -->
+	    </ul> 
    
 	 
 	   	    
 	    </ul>
 
 	  </div>
-	</nav>
+	</nav>-->
 
 	<!-- Se muestra cuadro de inicio de sesion-->
 	<div class="container">
@@ -73,8 +67,6 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
 
-        <h4 align="Center"><a href="#">¿Olvidó su contraseña?</a></h4>
-      
       			<?php 
             		if(isset($_GET["mensaje"]))
             		{
@@ -83,7 +75,9 @@
             	?>
 
       </form>
-
+	
+        <h4 align="Center"><a href="../index.html">¿Olvidó su contraseña?</a></h4>
+      
 
     </div> <!-- /container -->
 
