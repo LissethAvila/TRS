@@ -76,7 +76,7 @@
 		</div>
 		</div>
 
-    <form action="../Controlador/conUsuario.php" method="POST" name="FRegistro" id="FRegistro" class="" role="form">
+    <form action="../Controlador/conTicket.php" method="POST" name="FRegistro" id="FRegistro" class="" role="form">
 
 			<div class="row">
 				<div class="form-group col-xs-12 col-sm-12 col-md-3 col-md-offset-3">
@@ -99,10 +99,21 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-xs-12 col-sm-4 col-md-6 col-md-offset-3 col-lg-6">
+				<div class="form-group col-xs-12 col-sm-12 col-md-3 col-md-offset-3 col-lg-3">
 					<label name="" id="">Usuario</label>
 					<input name="usuariorep" id="usuariorep" class="form-control" type="text" placeholder="Usuario" value="" requiered="requiered">
-				</div>	
+				</div>
+
+				<div class="form-group col-xs-12 col-sm-12 col-md-3">
+					<label for="">Asignaci&oacute;n Agente</label>
+					<select name="agente" id="agente" class="form-control" values="Seleccione Prioridad">
+						<option value="Seleccion_Agente">Seleccione</option>
+						<option value="1">Sergio</option>
+						<option value="2">Lisseth</option>
+						<option value="3">Luis</option>
+
+					</select>
+				</div>
 				</div>
 
 			<div class="row">
